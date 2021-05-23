@@ -13,16 +13,14 @@ struct registro{
 
 main(){
 	system("color A");
-		int opc;
-		int p;
-		int b; 
-		int t;
+		int opc,p,b,t;
 		do{
-		cout<<" Menu "<<endl;
-		cout<<"1.PLATILLOS"<<endl;
-		cout<<"2.BEBIDAS"<<endl;
-		cout<<"3.POSTRES"<<endl;
-		cout<<"4. SALIR"<<endl;
+		cout<<"_________MENU____________"<<endl;
+		cout<<"1.  PLATILLOS"<<endl;
+		cout<<"2.  BEBIDAS"<<endl;
+		cout<<"3.  POSTRES"<<endl;
+		cout<<"4.  SALIR"<<endl;
+		cout<<"__________________________"<<endl; 
 		cin>>opc;
 		switch(opc){
 ///////////////////////////////PLATILLOS///////////////////////////////
@@ -30,13 +28,14 @@ main(){
 				int p;
 				 do{
         system("cls");
-    cout<<"------PLATILLOS-------"<<endl;    
+    cout<<"__________MENU PLARILLOS___________"<<endl;    
     cout<<"1. Guardar" <<endl;
     cout<<"2. Mostrar todos" <<endl;
     cout<<"3. Buscar" <<endl;
     cout<<"4. Modificar" <<endl;
     cout<<"5. Eliminar" <<endl;
     cout<<"6. Salir" <<endl;
+    cout<<"___________________________________"<<endl; 
     cin>>p;
     system("cls");
     
@@ -54,9 +53,9 @@ main(){
 			cin.ignore();
 		cout<<"Ingrese nombre de platillo : "<<endl;
 		getline(cin,nombre);
-		cout<<"Ingrese la caloria del platillo: "<<endl;
+		cout<<"Ingrese las caloria : "<<endl;
 		getline(cin,calorias);
-		cout<<"Ingrese el precio del platillo : "<<endl;
+		cout<<"Ingrese  precio : "<<endl;
 		getline(cin,precio);
 	
 		archivo<<codigo<<","<<nombre<<","<<calorias<<","<<precio<<endl;
@@ -91,14 +90,12 @@ main(){
 					strcpy(precio,puntero);
 				}
 			}
-		cout<<"------------DATOS--------------------"<<endl;
-		cout<<"-------------------------------------"<<endl;
-		cout<<"Codigo: "<<codigo<<endl;
-		cout<<"Noombre del platillo : "<<nombre<<endl;
-		cout<<"caloria: "<<calorias<<endl;
-		cout<<"precio: "<<precio<<endl;
-		cout<<"-------------------------------------"<<endl;
-		cout<<"-------------------------------------"<<endl;
+		cout<<"_______________PLATILLO_______________"<<endl;
+		cout<<"Codigo               :  "<<codigo<<endl;
+		cout<<"Noombre del platillo :  "<<nombre<<endl;
+		cout<<"caloria              :  "<<calorias<<endl;
+		cout<<"Precio               :  "<<precio<<endl;
+		cout<<"______________________________________"<<endl;
 		cout<<endl;	
 		Leer.getline(linea,sizeof(linea));
 		contador++;
@@ -140,14 +137,12 @@ main(){
 	}
 	if(cod==codigo){
 			bandera=true;	
-		cout<<"--------------DATOS---------------"<<endl;
-		cout<<"----------------------------------"<<endl;
-		cout<<"Codigo: "<<codigo<<endl;
-		cout<<"Nombre de platillo : "<<nombre<<endl;
-		cout<<"Calorias: "<<calorias<<endl;
-		cout<<"Precio: "<<precio<<endl;
-		cout<<"----------------------------------"<<endl;
-		cout<<"----------------------------------"<<endl;
+		cout<<"____________PLATILLO____________"<<endl;
+		cout<<"Codigo             :  "<<codigo<<endl;
+		cout<<"Nombre de platillo :  "<<nombre<<endl;
+		cout<<"Calorias           :  "<<calorias<<endl;
+		cout<<"Precio             :  "<<precio<<endl;
+		cout<<"________________________________"<<endl;
 		cout<<endl;	
 		Leer.getline(linea,sizeof(linea));
 		}
@@ -198,14 +193,12 @@ main(){
 			}
 		if(cod==codigo){
 			bandera=true;	
-		cout<<"--------REGISTRO ACTUAL---------"<<endl;
-		cout<<"--------------------------------"<<endl;
-		cout<<"Codigo: "<<codigo<<endl;
-		cout<<"Nombre de platillo : "<<nombre<<endl;
-		cout<<"Calorias: "<<calorias<<endl;
-		cout<<"Precio: "<<precio<<endl;
-		cout<<"--------------------------------"<<endl;
-		cout<<"--------------------------------"<<endl;
+		cout<<"________REGISTRO ACTUAL__________"<<endl;
+		cout<<"Codigo             :  "<<codigo<<endl;
+		cout<<"Nombre de platillo :  "<<nombre<<endl;
+		cout<<"Calorias           :  "<<calorias<<endl;
+		cout<<"Precio             :  "<<precio<<endl;
+		cout<<"_________________________________"<<endl;
 		cout<<endl;	
 		
 		cout<<"Ingrese nuevo nombre de platillo: "<<endl;
@@ -217,14 +210,12 @@ main(){
 		Leer.getline(linea,sizeof(linea));
 		Temp<<codigo<<","<<nombre_<<","<<calorias_<<","<<precio_<<endl;
 	
-		cout<<"---------NUEVO REGISTRO---------"<<endl;
-		cout<<"--------------------------------"<<endl;
-		cout<<"Codigo: "<<codigo<<endl;
-		cout<<"Nombre de platillo : "<<nombre_<<endl;
-		cout<<"Calorias: "<<calorias_<<endl;
-		cout<<"Precio: "<<precio_<<endl;
-		cout<<"--------------------------------"<<endl;
-		cout<<"--------------------------------"<<endl;
+		cout<<"_________NUEVO REGISTRO__________"<<endl;
+		cout<<"Codigo             :  "<<codigo<<endl;
+		cout<<"Nombre de platillo :  "<<nombre_<<endl;
+		cout<<"Calorias           :  "<<calorias_<<endl;
+		cout<<"Precio             :  "<<precio_<<endl;
+		cout<<"_________________________________"<<endl;
 		cout<<endl;	
 		Leer.getline(linea,sizeof(linea));
 		}
@@ -279,14 +270,12 @@ main(){
 			}
 		if(cod==codigo){
 			bandera=true;	
-		cout<<"-------REGISTRO ELIMINADO--------"<<endl;
-		cout<<"---------------------------------"<<endl;
-		cout<<"Codigo: "<<codigo<<endl;
-		cout<<"Nombre platillo : "<<nombre<<endl;
-		cout<<"Calorias : "<<calorias<<endl;
-		cout<<"Precio : "<<precio<<endl;
-		cout<<"---------------------------------"<<endl;
-		cout<<"---------------------------------"<<endl;
+		cout<<"_______REGISTRO ELIMINADO_________"<<endl;
+		cout<<"Codigo          :  "<<codigo<<endl;
+		cout<<"Nombre platillo :  "<<nombre<<endl;
+		cout<<"Calorias        :  "<<calorias<<endl;
+		cout<<"Precio          :  "<<precio<<endl;
+		cout<<"__________________________________"<<endl;
 		cout<<endl;	
 		Leer.getline(linea,sizeof(linea));
 		}
@@ -315,20 +304,23 @@ main(){
 		break;
         }       
     } 
-    }while(p!=6);   		
-    } 
-	///////////////////////MENU BEBIDAS/////////////////////////////////////////
-			case 2:{
-			int b;
+    
+    }while(p!=6);   
+	break;		
+      } 
+	////////////////////////MENU BEBIDAS/////////////////////////////////////////
+	case 2:{
+	int b;
 			 do{
         system("cls");
-    cout<<"------BEBIDAS-------"<<endl;    
+    cout<<"____________MENU BEBIDAS___________"<<endl;    
     cout<<"1. Guardar" <<endl;
     cout<<"2. Mostrar todos" <<endl;
     cout<<"3. Buscar" <<endl;
     cout<<"4. Modificar" <<endl;
     cout<<"5. Eliminar" <<endl;
     cout<<"6. Salir" <<endl;
+    cout<<"___________________________________"<<endl; 
     cin>>b;
     system("cls");
     
@@ -343,11 +335,11 @@ main(){
 	cout<<"Ingrese codigo: "<<endl;
 	cin>>codigo;
 		cin.ignore();
-	cout<<"Ingrese nombre de bebida : "<<endl;
+	cout<<"Ingrese nombre de la bebida : "<<endl;
 	getline(cin,nombre);
-	cout<<"Ingrese la caloria de la bebida: "<<endl;
+	cout<<"Ingrese las calorias: "<<endl;
 	getline(cin,calorias);
-	cout<<"Ingrese el precio de la bebida : "<<endl;
+	cout<<"Ingrese el percio : "<<endl;
 	getline(cin,precio);
 
 	archivo<<codigo<<","<<nombre<<","<<calorias<<","<<precio<<endl;
@@ -382,14 +374,12 @@ main(){
 				strcpy(precio,puntero);
 			}
 		}
-	cout<<"------------DATOS--------------------"<<endl;
-	cout<<"-------------------------------------"<<endl;
-	cout<<"Codigo: "<<codigo<<endl;
-	cout<<"Noombre del bebida : "<<nombre<<endl;
-	cout<<"caloria: "<<calorias<<endl;
-	cout<<"precio: "<<precio<<endl;
-	cout<<"-------------------------------------"<<endl;
-	cout<<"-------------------------------------"<<endl;
+	cout<<"________________BEBIDA________________"<<endl;
+	cout<<"Codigo             :  "<<codigo<<endl;
+	cout<<"Noombre del bebida :  "<<nombre<<endl;
+	cout<<"caloria            :  "<<calorias<<endl;
+	cout<<"precio             :  "<<precio<<endl;
+	cout<<"______________________________________"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
 	contador++;
@@ -431,14 +421,12 @@ main(){
 	}
 	if(cod==codigo){
 		bandera=true;	
-	cout<<"--------------DATOS---------------"<<endl;
-	cout<<"----------------------------------"<<endl;
-	cout<<"Codigo: "<<codigo<<endl;
-	cout<<"Nombre de bebida : "<<nombre<<endl;
-	cout<<"Calorias: "<<calorias<<endl;
-	cout<<"Precio: "<<precio<<endl;
-	cout<<"----------------------------------"<<endl;
-	cout<<"----------------------------------"<<endl;
+	cout<<"_____________BEBIDA________________"<<endl;
+	cout<<"Codigo           :  "<<codigo<<endl;
+	cout<<"Nombre de bebida :  "<<nombre<<endl;
+	cout<<"Calorias         :  "<<calorias<<endl;
+	cout<<"Precio           :  "<<precio<<endl;
+	cout<<"___________________________________"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
 	}
@@ -489,14 +477,12 @@ main(){
 		}
 	if(cod==codigo){
 		bandera=true;	
-	cout<<"--------REGISTRO ACTUAL---------"<<endl;
-	cout<<"--------------------------------"<<endl;
-	cout<<"Codigo: "<<codigo<<endl;
+	cout<<"________REGISTRO ACTUAL__________"<<endl;
+	cout<<"Codigo           : "<<codigo<<endl;
 	cout<<"Nombre de bebida : "<<nombre<<endl;
-	cout<<"Calorias: "<<calorias<<endl;
-	cout<<"Precio: "<<precio<<endl;
-	cout<<"--------------------------------"<<endl;
-	cout<<"--------------------------------"<<endl;
+	cout<<"Calorias         : "<<calorias<<endl;
+	cout<<"Precio           : "<<precio<<endl;
+	cout<<"_________________________________"<<endl;
 	cout<<endl;	
 	
 	cout<<"Ingrese nuevo nombre de bebida : "<<endl;
@@ -508,14 +494,12 @@ main(){
 	Leer.getline(linea,sizeof(linea));
 	Temp<<codigo<<","<<nombre_<<","<<calorias_<<","<<precio_<<endl;
 
-	cout<<"---------NUEVO REGISTRO---------"<<endl;
-	cout<<"--------------------------------"<<endl;
-	cout<<"Codigo: "<<codigo<<endl;
+	cout<<"__________NUEVO REGISTRO__________"<<endl;
+	cout<<"Codigo           : "<<codigo<<endl;
 	cout<<"Nombre de bebida : "<<nombre_<<endl;
-	cout<<"Calorias: "<<calorias_<<endl;
-	cout<<"Precio: "<<precio_<<endl;
-	cout<<"--------------------------------"<<endl;
-	cout<<"--------------------------------"<<endl;
+	cout<<"Calorias         : "<<calorias_<<endl;
+	cout<<"Precio           : "<<precio_<<endl;
+	cout<<"_________________________________"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
 	}
@@ -570,14 +554,12 @@ main(){
 		}
 	if(cod==codigo){
 		bandera=true;	
-	cout<<"-------REGISTRO ELIMINADO--------"<<endl;
-	cout<<"---------------------------------"<<endl;
-	cout<<"Codigo: "<<codigo<<endl;
-	cout<<"Nombre de bebida: "<<nombre<<endl;
-	cout<<"Calorias : "<<calorias<<endl;
-	cout<<"Precio : "<<precio<<endl;
-	cout<<"---------------------------------"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"_______REGISTRO ELIMINADO_________"<<endl;
+	cout<<"Codigo           : "<<codigo<<endl;
+	cout<<"Nombre de bebida : "<<nombre<<endl;
+	cout<<"Calorias         : "<<calorias<<endl;
+	cout<<"Precio           : "<<precio<<endl;
+	cout<<"__________________________________"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
 	}
@@ -614,13 +596,14 @@ main(){
 				int t;
     do{
         system("cls");
-    cout<<"------POSTRES-------"<<endl;    
+    cout<<"__________MENU POSTRES___________"<<endl;   
     cout<<"1. Guardar" <<endl;
    	cout<<"2. Mostrar todos" <<endl;
     cout<<"3. Buscar" <<endl;
     cout<<"4. Modificar" <<endl;
     cout<<"5. Eliminar" <<endl;
     cout<<"6. Salir" <<endl;
+    cout<<"_________________________________"<<endl; 
     cin>>t;
     system("cls");
     
@@ -637,9 +620,9 @@ main(){
 		cin.ignore();
 	cout<<"Ingrese nombre del postre : "<<endl;
 	getline(cin,nombre);
-	cout<<"Ingrese la caloria del postre: "<<endl;
+	cout<<"Ingrese las calorias: "<<endl;
 	getline(cin,calorias);
-	cout<<"Ingrese el precio delpostre : "<<endl;
+	cout<<"Ingrese el precio : "<<endl;
 	getline(cin,precio);
 
 	archivo<<codigo<<","<<nombre<<","<<calorias<<","<<precio<<endl;
@@ -674,14 +657,12 @@ main(){
 				strcpy(precio,puntero);
 			}
 		}
-	cout<<"------------DATOS--------------------"<<endl;
-	cout<<"-------------------------------------"<<endl;
-	cout<<"Codigo: "<<codigo<<endl;
-	cout<<"Noombre del postre: "<<nombre<<endl;
-	cout<<"caloria: "<<calorias<<endl;
-	cout<<"precio: "<<precio<<endl;
-	cout<<"-------------------------------------"<<endl;
-	cout<<"-------------------------------------"<<endl;
+	cout<<"________________POSTRES______________"<<endl;
+	cout<<"Codigo             : "<<codigo<<endl;
+	cout<<"Noombre del postre : "<<nombre<<endl;
+	cout<<"caloria            : "<<calorias<<endl;
+	cout<<"precio             : "<<precio<<endl;
+	cout<<"_____________________________________"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
 	contador++;
@@ -723,14 +704,12 @@ main(){
 	}
 	if(cod==codigo){
 		bandera=true;	
-	cout<<"--------------DATOS---------------"<<endl;
-	cout<<"----------------------------------"<<endl;
-	cout<<"Codigo: "<<codigo<<endl;
+	cout<<"______________POSTRE______________"<<endl;
+	cout<<"Codigo            : "<<codigo<<endl;
 	cout<<"Nombre del postre : "<<nombre<<endl;
-	cout<<"Calorias: "<<calorias<<endl;
-	cout<<"Precio: "<<precio<<endl;
-	cout<<"----------------------------------"<<endl;
-	cout<<"----------------------------------"<<endl;
+	cout<<"Calorias          : "<<calorias<<endl;
+	cout<<"Precio            : "<<precio<<endl;
+	cout<<"__________________________________"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
 	}
@@ -781,14 +760,12 @@ main(){
 		}
 	if(cod==codigo){
 		bandera=true;	
-	cout<<"--------REGISTRO ACTUAL---------"<<endl;
-	cout<<"--------------------------------"<<endl;
-	cout<<"Codigo: "<<codigo<<endl;
+	cout<<"_________REGISTRO ACTUAL_________"<<endl;
+	cout<<"Codigo            : "<<codigo<<endl;
 	cout<<"Nombre del postre : "<<nombre<<endl;
-	cout<<"Calorias: "<<calorias<<endl;
-	cout<<"Precio: "<<precio<<endl;
-	cout<<"--------------------------------"<<endl;
-	cout<<"--------------------------------"<<endl;
+	cout<<"Calorias          : "<<calorias<<endl;
+	cout<<"Precio            : "<<precio<<endl;
+	cout<<"_________________________________"<<endl;
 	cout<<endl;	
 	
 	cout<<"Ingrese nuevo nombre del postre: "<<endl;
@@ -800,14 +777,12 @@ main(){
 	Leer.getline(linea,sizeof(linea));
 	Temp<<codigo<<","<<nombre_<<","<<calorias_<<","<<precio_<<endl;
 
-	cout<<"---------NUEVO REGISTRO---------"<<endl;
-	cout<<"--------------------------------"<<endl;
-	cout<<"Codigo: "<<codigo<<endl;
+	cout<<"_________NUEVO REGISTRO__________"<<endl;
+	cout<<"Codigo            : "<<codigo<<endl;
 	cout<<"Nombre del postre : "<<nombre_<<endl;
-	cout<<"Calorias: "<<calorias_<<endl;
-	cout<<"Precio: "<<precio_<<endl;
-	cout<<"--------------------------------"<<endl;
-	cout<<"--------------------------------"<<endl;
+	cout<<"Calorias          : "<<calorias_<<endl;
+	cout<<"Precio            : "<<precio_<<endl;
+	cout<<"_________________________________"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
 	}
@@ -862,14 +837,12 @@ main(){
 		}
 	if(cod==codigo){
 		bandera=true;	
-	cout<<"-------REGISTRO ELIMINADO--------"<<endl;
-	cout<<"---------------------------------"<<endl;
-	cout<<"Codigo: "<<codigo<<endl;
+	cout<<"_______REGISTRO ELIMINADO________"<<endl;
+	cout<<"Codigo            : "<<codigo<<endl;
 	cout<<"Nombre del postre : "<<nombre<<endl;
-	cout<<"Calorias : "<<calorias<<endl;
-	cout<<"Precio : "<<precio<<endl;
-	cout<<"---------------------------------"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"Calorias          : "<<calorias<<endl;
+	cout<<"Precio            : "<<precio<<endl;
+	cout<<"_________________________________"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
 	}
