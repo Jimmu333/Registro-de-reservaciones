@@ -3,18 +3,10 @@
 #include<stdlib.h>
 #include<windows.h>
 #include<fstream>
-using namespace std;
-    
-struct registro{
-   int codigo;
-   char cliente[40];
-   int telefono;
-   char direccion[40];
-}; 
+using namespace std; 
 
 void uno(),dos(),tres(),cuatro(),cinco(),ver();
 char var[30];   
-registro reg1[3];
 main (){
     int opc;
     do{
@@ -79,6 +71,7 @@ void uno(){
 	cout<<"Ingrese codigo: "<<endl;
 	cin>>codigo;
 	cin.ignore();
+	//comentario xd
 	cout<<"Ingrese el nombre y el apellido del cliente en minusculas: "<<endl;
 	getline(cin,cliente);
 	cout<<"Ingrese el numero de telefono del clientes: "<<endl;
