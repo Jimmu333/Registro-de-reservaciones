@@ -215,7 +215,7 @@ void cuatro(){
 	getline(cin,ubicacionNuevo);
 	cout<<"\n";
 
-	cout<<"------------NEVO REGISTRO-----------"<<endl;
+	cout<<"------------NUEVO REGISTRO-----------"<<endl;
 	cout<<"Numero de mesa: "<<cod<<endl;
 	cout<<"Numero de sillas: "<<sillasNuevo<<endl;
 	cout<<"Ubicacion de la mesa: "<<ubicacionNuevo<<endl;
