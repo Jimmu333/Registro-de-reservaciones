@@ -5,8 +5,6 @@
 #include<fstream>
 using namespace std;
 
-//---------------------------------
-
 // ++++++++++++MESAS+++++++++++++++ 
 
 void uno(),dos(),tres(),cuatro(),cinco(),ver();
@@ -129,7 +127,7 @@ void tres(){
 	int contador=0;
 	bool bandera=false;
 	system("cls");
-	Leer.open("Clientes.txt");
+	Leer.open("Mesas.txt");
 	cout<<"Ingrese el codigo a buscar"<<endl;
 	cin>>cod;
 	char linea[120];
@@ -186,10 +184,7 @@ void cuatro(){
 	cout<<"Ingrese el numero de mesa a modificar: "<<endl;
 	cin>>cod;
 	cin.ignore();
-	cout<<"Ingrese numero de sillas de la mesa: "<<endl;
-	getline(cin,sillasNuevo);
-	cout<<"Ingrese la ubicacion de la mesa: "<<endl;
-	getline(cin,ubicacionNuevo);
+	
 	char linea[120];
 	Leer.getline(linea,sizeof(linea));
 	while(!Leer.eof()){
@@ -208,20 +203,23 @@ void cuatro(){
 		}
 	if(cod==numero){
 		bandera=true;	
-	cout<<"--------------------------------"<<endl;
+	cout<<"----------REGISTRO ANTERIOR-----------"<<endl;
 	cout<<"Numero de mesa: "<<numero<<endl;
 	cout<<"Numero de sillas: "<<sillas<<endl;
 	cout<<"Ubicacion de la mesa: "<<ubicacion<<endl;
-	cout<<"--------------------------------"<<endl;
+	cout<<"-------------------------------------"<<endl;
 	cout<<endl;	
-	
+	cout<<"Ingrese nuevo numero de sillas de la mesa: "<<endl;
+	getline(cin,sillasNuevo);
+	cout<<"Ingrese la nueva ubicacion de la mesa: "<<endl;
+	getline(cin,ubicacionNuevo);
 	cout<<"\n";
 
-	cout<<"--------------------------------"<<endl;
+	cout<<"------------NEVO REGISTRO-----------"<<endl;
 	cout<<"Numero de mesa: "<<cod<<endl;
 	cout<<"Numero de sillas: "<<sillasNuevo<<endl;
 	cout<<"Ubicacion de la mesa: "<<ubicacionNuevo<<endl;
-	cout<<"--------------------------------"<<endl;
+	cout<<"------------------------------------"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
 	Temp<<numero<<","<<sillasNuevo<<","<<ubicacionNuevo<<endl;
@@ -229,7 +227,7 @@ void cuatro(){
 		else{
  	
     Leer.getline(linea,sizeof(linea));
-    Temp<<numero<<","<<sillasNuevo<<","<<ubicacionNuevo<<endl;
+    Temp<<numero<<","<<sillas<<","<<ubicacion<<endl;
 }
 	}
 		if(bandera==false){
@@ -274,11 +272,11 @@ void cinco(){
 		}
 	if(cod==numero){
 		bandera=true;	
-	cout<<"--------------------------------"<<endl;
+	cout<<"---------REGISTRO ELIMINADO-----------"<<endl;
 	cout<<"Numero de mesa: "<<cod<<endl;
 	cout<<"Numero de sillas: "<<sillas<<endl;
 	cout<<"Ubicacion de la mesa: "<<ubicacion<<endl;
-	cout<<"--------------------------------"<<endl;
+	cout<<"--------------------------------------"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
 	}
