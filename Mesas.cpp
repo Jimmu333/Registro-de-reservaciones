@@ -7,18 +7,18 @@ using namespace std;
 
 // ++++++++++++MESAS+++++++++++++++ 
 
-void uno(),dos(),tres(),cuatro(),cinco(),ver();
+void guardarMesa(),mostrarMesa(),buscarMesa(),modificarMesa(),eliminarMesa(),ver();
 char var[30];   
 main (){
     int opc;
     do{
         system("cls");
     cout<<"------REGISTRO DE MESAS-------"<<endl;    
-    cout<<"1. Guardar" <<endl;
-    cout<<"2. Mostrar todas" <<endl;
-    cout<<"3. Buscar" <<endl;
-    cout<<"4. Modificar" <<endl;
-    cout<<"5. Eliminar" <<endl;
+    cout<<"1. Guardar mesa" <<endl;
+    cout<<"2. Mostrar todas las mesas" <<endl;
+    cout<<"3. Buscar mesa" <<endl;
+    cout<<"4. Modificar mesa" <<endl;
+    cout<<"5. Eliminar mesa" <<endl;
     cout<<"6. Salir" <<endl;
     
     do{
@@ -33,23 +33,23 @@ main (){
     
     switch(opc){
      case 1:{
-         uno();
+         guardarMesa();
          break;
         }   
         case 2:{
-      dos();
+      mostrarMesa();
          break;
         }
         case 3:{
-      tres();
+      buscarMesa();
          break;
         }
         case 4:{
-           cuatro();
+           modificarMesa();
          break;
         }
         case 5:{
-          cinco();
+          eliminarMesa();
          break;
         } 
         case 6:{
@@ -64,7 +64,7 @@ main (){
     }while(opc!=6);   
 }
 //------------------GUARDAR-----------------
-void uno(){
+void guardarMesa(){
 	ofstream archivo;
 	system("cls");
 	archivo.open("Mesas.txt",ios::app);
@@ -82,7 +82,7 @@ void uno(){
 	system("pause");
 }
 //--------------MOSTRAR TODOS------------
-void dos(){
+void mostrarMesa(){
 	int numero;
 	char sillas[30],ubicacion[30];
 	ifstream Leer;
@@ -120,7 +120,7 @@ void dos(){
 }
 
 //--------------BUSCAR------------
-void tres(){
+void buscarMesa(){
 	int numero,cod;
 	char sillas[20],ubicacion[30];
 	ifstream Leer;
@@ -128,7 +128,7 @@ void tres(){
 	bool bandera=false;
 	system("cls");
 	Leer.open("Mesas.txt");
-	cout<<"Ingrese el codigo a buscar"<<endl;
+	cout<<"Ingrese el codigo de la mesa a buscar:"<<endl;
 	cin>>cod;
 	char linea[120];
 	Leer.getline(linea,sizeof(linea));
@@ -168,7 +168,7 @@ void tres(){
 }
 
 //--------------MODIFICAR----------------
-void cuatro(){
+void modificarMesa(){
 	int numero,cod;
 	char ubicacion[30],sillas[30];
 	
@@ -203,7 +203,7 @@ void cuatro(){
 		}
 	if(cod==numero){
 		bandera=true;	
-	cout<<"----------REGISTRO ANTERIOR-----------"<<endl;
+	cout<<"------ ----REGISTRO ACTUAL------------"<<endl;
 	cout<<"Numero de mesa: "<<numero<<endl;
 	cout<<"Numero de sillas: "<<sillas<<endl;
 	cout<<"Ubicacion de la mesa: "<<ubicacion<<endl;
@@ -241,7 +241,7 @@ void cuatro(){
 }
 
 //--------------ELIMINAR-----------------
-void cinco(){
+void eliminarMesa(){
 	int numero,cod;
 	char sillas[30],ubicacion[30];
 	bool bandera=false;
