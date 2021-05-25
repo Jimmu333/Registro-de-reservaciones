@@ -272,7 +272,7 @@ void eliminarMesa(){
 		}
 	if(cod==numero){
 		bandera=true;	
-	cout<<"---------REGISTRO ELIMINADO-----------"<<endl;
+	cout<<"---------REGISTRO A ELIMINAR----------"<<endl;
 	cout<<"Numero de mesa: "<<cod<<endl;
 	cout<<"Numero de sillas: "<<sillas<<endl;
 	cout<<"Ubicacion de la mesa: "<<ubicacion<<endl;
@@ -289,9 +289,43 @@ void eliminarMesa(){
 		if(bandera==false){
 			cout<<"El registro no existe"<<endl;
 		}
-	Leer.close();
+		
+		else{
+			int confirmacion;
+			cout<<"¿Esta seguro que desea eliminar el registro?"<<endl;
+	cout<<"1 para confirmar";
+	cout<<"2 para cancelar\n";
+	cin>>confirmacion;
+				
+			switch(confirmacion){
+							case 2:{
+				Leer.close();
+	Temp.close();
+    remove("Temp.txt");
+	cout<<"El registro NO fue eliminado\n";
+	
+				break;
+			}
+			case 1:{
+				Leer.close();
 	Temp.close();
     remove("Mesas.txt");
 	rename("Temp.txt","Mesas.txt");
-	system("pause");
+	cout<<"Registro eliminado con exito\n";
+
+					break;
+			}
+			default:{
+						cout<<"Opcion no encontrada"<<endl;
+
+				break;
+			}
+			}
+
+		}
+		
+			system("pause");
+
+
 }
+		
