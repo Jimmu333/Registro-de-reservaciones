@@ -14,19 +14,19 @@ public:
  int anio;   
 } ;   
 
-void uno(),dos(),tres(),cuatro(),cinco(),seis(),ver();
+void guardarReservacion(),mostrarReservacion(),reservacionFecha(),reservacionCliente(),modificarReservacion(),eliminarReservacion(),ver();
 char var[30];   
 main (){
     int opc;
     do{
         system("cls");
-    cout<<"------REGISTRO DE RESERVACIONES-------"<<endl;    
-    cout<<"1. Guardar" <<endl;
-    cout<<"2. Mostrar todas" <<endl;
-    cout<<"3. Buscar por fecha" <<endl;
-    cout<<"4. Buscar por cliente" <<endl;
-    cout<<"5. Modificar" <<endl;
-    cout<<"6. Eliminar" <<endl;
+    cout<<"--------REGISTRO DE RESERVACIONES---------"<<endl;    
+    cout<<"1. Guardar nueva reservacion" <<endl;
+    cout<<"2. Mostrar todas las reservaciones" <<endl;
+    cout<<"3. Buscar reservacion por fecha" <<endl;
+    cout<<"4. Buscar reservacion por cliente" <<endl;
+    cout<<"5. Modificar reservacion" <<endl;
+    cout<<"6. Eliminar reservacion" <<endl;
     cout<<"7. Salir" <<endl;
     
     do{
@@ -41,27 +41,27 @@ main (){
     
     switch(opc){
      case 1:{
-         uno();
+         guardarReservacion();
          break;
         }   
         case 2:{
-      dos();
+      mostrarReservacion();
          break;
         }
         case 3:{
-      tres();
+      reservacionFecha();
          break;
         }
         case 4:{
-           cuatro();
+           reservacionCliente();
          break;
         }
         case 5:{
-          cinco();
+          modificarReservacion();
          break;
         } 
         case 6:{
-            seis();
+            eliminarReservacion();
          break;   
         } 
         case 7:{
@@ -76,7 +76,7 @@ main (){
     }while(opc!=6);   
 }
 //------------------GUARDAR-----------------
-void uno(){
+void guardarReservacion(){
 	ofstream archivo;
 	system("cls");
 	archivo.open("Reservaciones.txt",ios::app);
@@ -167,7 +167,7 @@ void uno(){
 	system("pause");
 }
 //--------------MOSTRAR TODOS------------
-void dos(){
+void mostrarReservacion(){
 	int numero;
 	char sillas[30],ubicacion[30];
 	ifstream Leer;
@@ -210,8 +210,8 @@ void dos(){
 	system("pause");
 }
 
-//--------------BUSCAR------------
-void tres(){
+//--------------BUSCAR POR FECHA------------
+void reservacionFecha(){
 	int numero,cod;
 	char sillas[20],ubicacion[30];
 	ifstream Leer;
@@ -259,12 +259,12 @@ void tres(){
 }
 //----------BUSCAR POR CLIENTE-------------
 
-void cuatro(){
+void reservacionCliente(){
 
 }
 
 //--------------MODIFICAR----------------
-void cinco(){
+void modificarCliente(){
 	int numero,cod;
 	char ubicacion[30],sillas[30];
 	
@@ -337,7 +337,7 @@ void cinco(){
 }
 
 //--------------ELIMINAR-----------------
-void seis(){
+void eliminarCliente(){
  	int numero,cod;
 	char sillas[30],ubicacion[30];
 	bool bandera=false;

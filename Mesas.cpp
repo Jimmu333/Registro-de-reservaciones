@@ -317,6 +317,7 @@ void eliminarMesa(){
 			}
 			default:{
 						cout<<"Opcion no encontrada"<<endl;
+						cout<<"El registro NO fue eliminado\n";
 
 				break;
 			}
