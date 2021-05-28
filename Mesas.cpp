@@ -13,13 +13,14 @@ main (){
     int opc;
     do{
         system("cls");
-    cout<<"------REGISTRO DE MESAS-------"<<endl;    
-    cout<<"1. Guardar mesa" <<endl;
-    cout<<"2. Mostrar todas las mesas" <<endl;
-    cout<<"3. Buscar mesa" <<endl;
-    cout<<"4. Modificar mesa" <<endl;
-    cout<<"5. Eliminar mesa" <<endl;
-    cout<<"6. Salir" <<endl;
+    cout<<"|------REGISTRO DE MESAS-------|"<<endl;    
+    cout<<"| 1. Guardar mesa              |" <<endl;
+    cout<<"| 2. Mostrar todas las mesas   |" <<endl;
+    cout<<"| 3. Buscar mesa               |" <<endl;
+    cout<<"| 4. Modificar mesa            |" <<endl;
+    cout<<"| 5. Eliminar mesa             |" <<endl;
+    cout<<"| 6. Salir                     |" <<endl;
+    cout<<"|------------------------------|"<<endl; 
     
     do{
  cin>>var;
