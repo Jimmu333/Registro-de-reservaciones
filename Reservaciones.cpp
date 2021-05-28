@@ -28,7 +28,7 @@ main (){
     cout<<"| 5. Modificar reservacion                 |" <<endl;
     cout<<"| 6. Eliminar reservacion                  |" <<endl;
     cout<<"| 7. Salir                                 |" <<endl;
-    cout<<"|------------------------------------------|r" <<endl;
+    cout<<"|------------------------------------------|" <<endl;
     
     do{
  cin>>var;
@@ -135,7 +135,7 @@ void guardarReservacion(){
     archivo.close();
 	system("pause");
 }
-//--------------MOSTRAR TODOS------------
+//--------------MOSTRAR TODOS--------------
 void mostrarReservacion(){
 	int codigoReservacion,numeroMesaReservacion,codigoClienteReservacion;
 	char fechaReservacion[10];
@@ -164,9 +164,9 @@ void mostrarReservacion(){
 		}
 	cout<<"---------------------------------------"<<endl;
 	cout<<"Codigo de la reservacion: "<<codigoReservacion<<endl;
-	cout<<"Numero de mesa de la reservacion: "<<numeroMesaReservacion<<endl;
 	cout<<"Codigo del cliente: "<<codigoClienteReservacion<<endl;
 	cout<<"Fecha de la reservacion: "<<fechaReservacion<<endl;
+	cout<<"Numero de mesa de la reservacion: "<<numeroMesaReservacion<<endl;
 	cout<<"---------------------------------------"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
@@ -210,13 +210,14 @@ void reservacionFecha(){
 	if((strcmp(fechaReservacion,fechaReservacionBuscar)==0)) {
 		bandera=true;
 	cout<<"---------------------------------------"<<endl;
-	cout<<"Codigo de la reservacion: "<<codigoReservacion<<endl;
-	cout<<"Numero de mesa de la reservacion: "<<numeroMesaReservacion<<endl;
-	cout<<"Codigo del cliente: "<<codigoClienteReservacion<<endl;
 	cout<<"Fecha de la reservacion: "<<fechaReservacion<<endl;
+	cout<<"Codigo de la reservacion: "<<codigoReservacion<<endl;
+	cout<<"Codigo del cliente: "<<codigoClienteReservacion<<endl;
+	cout<<"Numero de mesa de la reservacion: "<<numeroMesaReservacion<<endl;	
 	cout<<"---------------------------------------"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
+
 	} else {
 		Leer.getline(linea,sizeof(linea));
 	}
@@ -262,10 +263,10 @@ void reservacionCliente(){
 	if(cod==codigoClienteReservacion) {
 		bandera=true;
 	cout<<"---------------------------------------"<<endl;
-	cout<<"Codigo de la reservacion: "<<codigoReservacion<<endl;
-	cout<<"Numero de mesa de la reservacion: "<<numeroMesaReservacion<<endl;
 	cout<<"Codigo del cliente: "<<codigoClienteReservacion<<endl;
+	cout<<"Codigo de la reservacion: "<<codigoReservacion<<endl;
 	cout<<"Fecha de la reservacion: "<<fechaReservacion<<endl;
+	cout<<"Numero de mesa de la reservacion: "<<numeroMesaReservacion<<endl;
 	cout<<"---------------------------------------"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
@@ -318,15 +319,15 @@ void modificarReservacion(){
 				puntero=strtok(NULL,",");
 				strcpy(fechaReservacion,puntero);
 			}
-		}}
+		}
 		
 	if(cod==codigoReservacion){
 		bandera=true;	
 	cout<<"------------REGISTRO ACTUAL------------"<<endl;
     cout<<"Codigo de la reservacion: "<<codigoReservacion<<endl;
-	cout<<"Numero de mesa de la reservacion: "<<numeroMesaReservacion<<endl;
 	cout<<"Codigo del cliente: "<<codigoClienteReservacion<<endl;
 	cout<<"Fecha de la reservacion: "<<fechaReservacion<<endl;
+	cout<<"Numero de mesa de la reservacion: "<<numeroMesaReservacion<<endl;
 	cout<<"---------------------------------------"<<endl;
 	cout<<endl;	
 	
@@ -368,9 +369,9 @@ void modificarReservacion(){
 
 	cout<<"------------NEVO REGISTRO-----------"<<endl;
 	cout<<"Codigo de la reservacion: "<<codigoReservacion<<endl;
-	cout<<"Numero de mesa de la reservacion: "<<numeroMesaReservacionNuevo<<endl;
 	cout<<"Codigo del cliente: "<<codigoClienteReservacionNuevo<<endl;
 	cout<<"Fecha de la reservacion: "<<fechaReservacionNuevo<<endl;
+	cout<<"Numero de mesa de la reservacion: "<<numeroMesaReservacionNuevo<<endl;
 	cout<<"---------------------------------------"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
@@ -381,7 +382,7 @@ void modificarReservacion(){
     Leer.getline(linea,sizeof(linea));
     Temp<<codigoReservacion<<","<<numeroMesaReservacion<<","<<codigoClienteReservacion<<","<<fechaReservacion<<endl;
 }
-	
+}
 		if(bandera==false){
 			cout<<"El registro no existe"<<endl;
 		}
@@ -424,14 +425,14 @@ int codigoReservacion,numeroMesaReservacion,codigoClienteReservacion,cod;
 				puntero=strtok(NULL,",");
 				strcpy(fechaReservacion,puntero);
 			}
-		}}
+		}
 	if(cod==codigoReservacion){
 		bandera=true;	
 	cout<<"---------REGISTRO A ELIMINAR----------"<<endl;
     cout<<"Codigo de la reservacion: "<<codigoReservacion<<endl;
-	cout<<"Numero de mesa de la reservacion: "<<numeroMesaReservacion<<endl;
 	cout<<"Codigo del cliente: "<<codigoClienteReservacion<<endl;
 	cout<<"Fecha de la reservacion: "<<fechaReservacion<<endl;
+	cout<<"Numero de mesa de la reservacion: "<<numeroMesaReservacion<<endl;
 	cout<<"---------------------------------------"<<endl;
 	cout<<endl;	
 	Leer.getline(linea,sizeof(linea));
@@ -441,7 +442,7 @@ int codigoReservacion,numeroMesaReservacion,codigoClienteReservacion,cod;
     Leer.getline(linea,sizeof(linea));
     Temp<<codigoReservacion<<","<<numeroMesaReservacion<<","<<codigoClienteReservacion<<","<<fechaReservacion<<endl;
 }
-	
+}
 		if(bandera==false){
 			cout<<"El registro no existe"<<endl;
 		}
@@ -449,7 +450,7 @@ int codigoReservacion,numeroMesaReservacion,codigoClienteReservacion,cod;
 		else{
 			int confirmacion;
 			cout<<"¿Esta seguro que desea eliminar el registro?"<<endl;
-	cout<<"1 para confirmar";
+	cout<<"1 para confirmar"<<endl;
 	cout<<"2 para cancelar\n";
 	cin>>confirmacion;
 				
@@ -465,8 +466,9 @@ int codigoReservacion,numeroMesaReservacion,codigoClienteReservacion,cod;
 			case 1:{
 				Leer.close();
 	Temp.close();
-    remove("Mesas.txt");
-	rename("Temp.txt","Mesas.txt");
+
+    remove("Reservaciones.txt");
+	rename("Temp.txt","Reservaciones.txt");
 	cout<<"Registro eliminado con exito\n";
 
 					break;

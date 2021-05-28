@@ -308,7 +308,7 @@ void eliminarMesa(){
 				break;
 			}
 			case 1:{
-				Leer.close();
+	Leer.close();
 	Temp.close();
     remove("Mesas.txt");
 	rename("Temp.txt","Mesas.txt");
