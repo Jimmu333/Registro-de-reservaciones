@@ -86,7 +86,7 @@ void guardarCliente(){
 	getline(cin,telefono);
 	cout<<"Ingrese la direccion de vivienda del cliente: "<<endl;
 	getline(cin,direccion);
-	archivo<<codigo<<","<<cliente<<","<<telefono<<","<<direccion<<endl;
+	archivo<<codigo<<","<<cliente<<","<<telefono<<","<<direccion<<",1"<<endl;
     archivo.close();
 	system("pause");
 }
