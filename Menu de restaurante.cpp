@@ -633,7 +633,7 @@ int main(){
     cout<<"| 4. Modificar postre                |" <<endl;
     cout<<"| 5. Eliminar postre                 |" <<endl;
     cout<<"| 6. Salir                           |" <<endl;
-    cout<<"|------------------------------------|"endl;
+    cout<<"|------------------------------------|"<<endl;
     cin>>t;
     
     switch(t){
