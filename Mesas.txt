@@ -1,0 +1,5 @@
+1,4,Primer nivel
+2,6,Primer nivel
+3,4,Segundo nivel
+4,8,jardin
+5,10,jardin
