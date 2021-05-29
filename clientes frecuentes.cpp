@@ -12,10 +12,10 @@ main (){
     int opc;
     do{
         system("cls");
-    cout<<"|------CLIENTES FRECUENTES--------------|"<<endl;    
-    cout<<"| 1. Mostrar la frecuencia              |" <<endl;
-    cout<<"| 2. Salir                              |" <<endl;
-    cout<<"|---------------------------------------|"<<endl; 
+    cout<<"|------CLIENTES FRECUENTES-----------|"<<endl;    
+    cout<<"| 1. Mostrar la frecuencia           |" <<endl;
+    cout<<"| 2. Salir                           |" <<endl;
+    cout<<"|------------------------------------|"<<endl; 
     
     do{
  cin>>var;
@@ -76,7 +76,7 @@ void clienteFrecuente(){
 		}
 	cout<<"--------------------------------"<<endl;
 	cout<<"Frecuencia del cliente: "<<frecuenciaNueva<<endl;
-	cout<<"Codigo: "<<codigo<<endl;
+	cout<<"Codigo del cliente: "<<codigo<<endl;
 	cout<<"Nombre del cliente: "<<cliente<<endl;
 	cout<<"Numero de telefono: "<<telefono<<endl;
 	cout<<"Direccion de vivienda: "<<direccion<<endl;
