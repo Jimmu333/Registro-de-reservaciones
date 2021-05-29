@@ -1846,7 +1846,7 @@ char linea[120];
 			cout<<"El registro no existe"<<endl;
 		}else{
 			int confirmacion;
-			cout<<"Esta seguro que desea eliminar el registro?";
+			cout<<"Esta seguro que desea eliminar el registro?"<<endl;
 	cout<<"1. para confirmar"<<endl;
 	cout<<"2. para cancelar\n";
 	cin>>confirmacion;
