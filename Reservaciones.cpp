@@ -81,7 +81,7 @@ void guardarReservacion(){
 	ofstream archivo;
 	system("cls");
 	archivo.open("Reservaciones.txt",ios::app);
-	int codigoReservacion,codigoClienteReservacion,numeroMesaReservacion;
+	int codigoReservacion,codigoClienteReservacion,numeroMesaReservacion,frecuenciaNueva=0;
 	string fechaReservacion;
 	
 	cout<<"Ingrese codigo de reservacion: "<<endl;
@@ -133,7 +133,64 @@ void guardarReservacion(){
 	
 	archivo<<codigoReservacion<<","<<numeroMesaReservacion<<","<<codigoClienteReservacion<<","<<fechaReservacion<<endl;
     archivo.close();
+    
+    
+    int codigo;
+	char cliente[30],telefono[20],direccion[30];
+	
+	string clientenu, telefononu, direccionnu;
+	
+	bool bandera=false;
+	ifstream Leer;
+	ofstream Temp;
+	Leer.open("Clientes.txt");
+	Temp.open("Temp.txt");
+	
+	char linea[120];
+	Leer.getline(linea,sizeof(linea));
+	while(!Leer.eof()){
+		for(int i=0;i<5;i++){
+			char *puntero;
+			if(i==0){
+				puntero=strtok(linea,",");
+				codigo=atoi(puntero);
+			}else if(i==1){
+				puntero=strtok(NULL,",");
+				strcpy(cliente,puntero);
+			}else if(i==2){
+				puntero=strtok(NULL,",");
+				strcpy(telefono,puntero);
+			}else if(i==3){
+				puntero=strtok(NULL,",");
+				strcpy(direccion,puntero);
+			} else if (i==4){
+			    puntero=strtok(NULL,",");
+				frecuenciaNueva=atoi(puntero);
+			}
+		}
+	
+	if(codigoClienteReservacion==codigo){
+		bandera=true;	
+	
+	Leer.getline(linea,sizeof(linea));
+	Temp<<codigo<<","<<cliente<<","<<telefono<<","<<direccion<<","<<(frecuenciaNueva+1)<<endl;
+	}
+		else{
+ 	
+    Leer.getline(linea,sizeof(linea));
+    Temp<<codigo<<","<<cliente<<","<<telefono<<","<<direccion<<","<<(frecuenciaNueva)<<endl;
+}
+	}
+		
+	Leer.close();
+	Temp.close();
+    remove("Clientes.txt");
+	rename("Temp.txt","Clientes.txt");
+    
+    
 	system("pause");
+
+	
 }
 //--------------MOSTRAR TODOS--------------
 void mostrarReservacion(){
@@ -186,7 +243,7 @@ void reservacionFecha(){
 	bool bandera=false;
 	system("cls");
 	Leer.open("Reservaciones.txt");
-	cout<<"Ingrese la fecha que desea que desea desplegar: "<<endl;
+	cout<<"Ingrese la fecha que desea que desea desplegar (dd/mm/aa): "<<endl;
 	cin>>fechaReservacionBuscar;
 	char linea[120];
 	Leer.getline(linea,sizeof(linea));
