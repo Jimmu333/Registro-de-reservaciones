@@ -15,14 +15,14 @@ int main ()
 	int opc;
 	do{
 	system("cls");
-    cout<<"\n\t\t\t\t\t| ----Empleados---- |";    
-    cout<<"\n\t\t\t\t\t| 1. Guardar nuevo  |";
-    cout<<"\n\t\t\t\t\t| 2. Mostrar todos  |";
-    cout<<"\n\t\t\t\t\t| 3. Buscar         |";
-    cout<<"\n\t\t\t\t\t| 4. Modificar      |";
-    cout<<"\n\t\t\t\t\t| 5. Eliminar       |";
-    cout<<"\n\t\t\t\t\t| 6. Salir          |";
-    cout<<"\n\t\t\t\t\t| ----------------- |";
+    cout<<"| ----Empleados---- |";    
+    cout<<"| 1. Guardar nuevo  |";
+    cout<<"| 2. Mostrar todos  |";
+    cout<<"| 3. Buscar         |";
+    cout<<"| 4. Modificar      |";
+    cout<<"| 5. Eliminar       |";
+    cout<<"| 6. Salir          |";
+    cout<<"| ----------------- |";
     cout<<"\nIngrese la opcion: "<<endl;
     cin>>opc;
 		
@@ -314,7 +314,7 @@ cout<<"Ingrese nombre completo: "<<endl;
 	cout<<"\n\n";
 
 	cout<<"---------NUEVO REGISTRO---------"<<endl;
-	cout<<"Codigo: "<<codigo2<<endl;
+	cout<<"Codigo: "<<codigo<<endl;
 	cout<<"Nombre: " <<nombre2<<endl;
 	cout<<"Edad: " <<edad2 <<endl;
 	cout<<"Telefono: "<<telefono2<<endl;
@@ -325,7 +325,7 @@ cout<<"Ingrese nombre completo: "<<endl;
 	cout<<"--------------------------------"<<endl;
 	
 	Leer.getline(linea,sizeof(linea));
-	Temp<<codigo2<<", "<<nombre2<<", "<<edad2<<", "<<telefono2<<", "<<direccion2<<", "<<fechaContratacion2<<", "<<puesto2<<", "<<salario2<<endl;
+	Temp<<codigo<<", "<<nombre2<<", "<<edad2<<", "<<telefono2<<", "<<direccion2<<", "<<fechaContratacion2<<", "<<puesto2<<", "<<salario2<<endl;
 	}
 	
 	else{
@@ -425,12 +425,12 @@ char linea[120];
 		}else{
 			int confirmacion;
 			cout<<"Esta seguro que desea eliminar el registro?";
-	cout<<"\n\t\t\t1 para confirmar";
-	cout<<"\t\t\t0 para cancelar\n";
+	cout<<"1. para confirmar"<<endl;
+	cout<<"2. para cancelar\n";
 	cin>>confirmacion;
 				
 			switch(confirmacion){
-							case 0:{
+							case 2:{
 				Leer.close();
 	Temp.close();
     remove("Temp.txt");
@@ -451,7 +451,7 @@ char linea[120];
 					break;
 			}
 			default:{
-						cout<<"\t\t\t\t¡¡¡Respuesta invalida!!!";
+						cout<<"Opcion no encontrada";
 
 				break;
 			}
