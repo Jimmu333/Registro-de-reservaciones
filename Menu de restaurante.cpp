@@ -5,15 +5,16 @@
 #include<fstream>
 using namespace std;
 
-main(){
+int main(){
 		int opc,p,b,t;
 		do{
 			system("cls");
-		cout<<"-------MENU--------"<<endl;
-		cout<<"1. Platillos"<<endl;
-		cout<<"2. Bebidas"<<endl;
-		cout<<"3. Postres"<<endl;
-		cout<<"4. Salir"<<endl;
+		cout<<"|-------MENU---------|"<<endl;
+		cout<<"| 1. Platillos       |"<<endl;
+		cout<<"| 2. Bebidas         |"<<endl;
+		cout<<"| 3. Postres         |"<<endl;
+		cout<<"| 4. Salir           |"<<endl;
+		cout<<"|--------------------|"<<endl;
 		cin>>opc;
 		switch(opc){
 ///////////////////////////////PLATILLOS///////////////////////////////
@@ -21,13 +22,14 @@ main(){
 				int p;
 				 do{
         system("cls");
-    cout<<"-----------REGISTRO DE PLATILLOS---------"<<endl;    
-    cout<<"1. Guardar plaitllo" <<endl;
-    cout<<"2. Mostrar todos los platillos" <<endl;
-    cout<<"3. Buscar platillo" <<endl;
-    cout<<"4. Modificar platillo" <<endl;
-    cout<<"5. Eliminar plaitllo" <<endl;
-    cout<<"6. Salir" <<endl;
+    cout<<"|-----------REGISTRO DE PLATILLOS----------|"<<endl;    
+    cout<<"| 1. Guardar plaitllo                      |" <<endl;
+    cout<<"| 2. Mostrar todos los platillos           |" <<endl;
+    cout<<"| 3. Buscar platillo                       |" <<endl;
+    cout<<"| 4. Modificar platillo                    |" <<endl;
+    cout<<"| 5. Eliminar plaitllo                     |" <<endl;
+    cout<<"| 6. Salir                                 |" <<endl;
+    cout<<"|------------------------------------------|"<<endl;
     cin>>p;
     
     switch(p){
@@ -280,15 +282,14 @@ main(){
 			}
 			else {
 				int confirmacion;
-				cout<<"¿Esta seguro que desea eliminar el registro"<<endl;
-				cout<< "1 para confirmar   ";
-				cout<< "2 para cancelar \n";
-				cin>>confirmacion;
+				cout<<"Esta seguro que desea eliminar el registro"<<endl;
+				cout<< "1 para confirmar   "<<endl;
+				cout<< "2 para cancelar \n"<<endl;
 				switch(confirmacion){
 					case 2:{
 						Leer.close();
 						Temp.close();
-						remove("platillos,txt");
+						remove("platillos.txt");
 					cout<<"El registro  NO fue eliminado \n";	
 						system("pause");
 						break;
@@ -323,13 +324,14 @@ main(){
 	int b;
 			 do{
         system("cls");
-    cout<<"-----------REGISTRO BEBIDAS--------"<<endl;    
-    cout<<"1. Guardar bebidsa" <<endl;
-    cout<<"2. Mostrar todas las bebidas" <<endl;
-    cout<<"3. Buscar  bebidas" <<endl;
-    cout<<"4. Modificar bebida" <<endl;
-    cout<<"5. Eliminar bebida" <<endl;
-    cout<<"6. Salir" <<endl;
+    cout<<"|-----------REGISTRO BEBIDAS---------|"<<endl;    
+    cout<<"| 1. Guardar bebida                  |" <<endl;
+    cout<<"| 2. Mostrar todas las bebidas       |" <<endl;
+    cout<<"| 3. Buscar  bebidas                 |" <<endl;
+    cout<<"| 4. Modificar bebida                |" <<endl;
+    cout<<"| 5. Eliminar bebida                 |" <<endl;
+    cout<<"| 6. Salir                           |" <<endl;
+    cout<<"|------------------------------------|"<<endl;
     cin>>b;
     
     switch(b){
@@ -581,13 +583,13 @@ main(){
 		}
 		else{
 			int confirmacion;
-			cout<<"¿Esta seguro que desea eliminar el registro?"<<endl;
-			cout<<"1 para confirmar   ";
-			cout<<"2 para cancelar\n";
+			cout<<"Esta seguro que desea eliminar el registro?"<<endl;
+			cout<<"1 para confirmar   "<<endl;
+			cout<<"2 para cancelar\n"<<endl;
 			cin>>confirmacion;
 			switch(confirmacion){
 				case 2:{
-					Leer.close();
+	Leer.close();
 	Temp.close();
     remove("Temp.txt");
 	cout<<"El registro NO fue eliminado\n";
@@ -624,13 +626,14 @@ main(){
 				int t;
     do{
         system("cls");
-    cout<<"-----------MENU POSTRES------------"<<endl;   
-    cout<<"1. Guardar postre" <<endl;
-   	cout<<"2. Mostrar todos los postres" <<endl;
-    cout<<"3. Buscar postre" <<endl;
-    cout<<"4. Modificar postre" <<endl;
-    cout<<"5. Eliminar postre" <<endl;
-    cout<<"6. Salir" <<endl;
+    cout<<"|-----------MENU POSTRES-------------|"<<endl;   
+    cout<<"| 1. Guardar postre                  |" <<endl;
+    cout<<"| 2. Mostrar todos los postres       |" <<endl;
+    cout<<"| 3. Buscar postre                   |" <<endl;
+    cout<<"| 4. Modificar postre                |" <<endl;
+    cout<<"| 5. Eliminar postre                 |" <<endl;
+    cout<<"| 6. Salir                           |" <<endl;
+    cout<<"|------------------------------------|"endl;
     cin>>t;
     
     switch(t){
@@ -883,9 +886,9 @@ main(){
 		}
 		else {
 			int confirmacion;
-			cout<<"¿Esta seguro que desea eliminar el registro?"<<endl;
-	cout<<"1 para confirmar  ";
-	cout<<"2 para cancelar\n";
+			cout<<"Esta seguro que desea eliminar el registro?"<<endl;
+	cout<<"1 para confirmar  "<<endl;
+	cout<<"2 para cancelar\n"<<endl;
 	cin>>confirmacion;
 	switch(confirmacion){
 		case 2:{
@@ -933,4 +936,5 @@ main(){
 while(opc !=4);
 	system("pause");	
 }
+
 
