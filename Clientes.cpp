@@ -12,20 +12,21 @@ struct registro{
    char direccion[40];
 }; 
 
-void uno(),dos(),tres(),cuatro(),cinco(),ver();
+void guardarCliente(),mostrarCliente(),buscarCliente(),modificarCliente(),eliminarCliente(),ver();
 char var[30];   
 registro reg1[3];
 main (){
     int opc;
     do{
         system("cls");
-    cout<<"------REGISTRO DE CLIENTES-------"<<endl;    
-    cout<<"1. Guardar" <<endl;
-    cout<<"2. Mostrar todos" <<endl;
-    cout<<"3. Buscar" <<endl;
-    cout<<"4. Modificar" <<endl;
-    cout<<"5. Eliminar" <<endl;
-    cout<<"6. Salir" <<endl;
+    cout<<"|------REGISTRO DE CLIENTES-------|"<<endl;    
+    cout<<"| 1. Guardar cliente              |" <<endl;
+    cout<<"| 2. Mostrar todos los clientes   |" <<endl;
+    cout<<"| 3. Buscar cliente               |" <<endl;
+    cout<<"| 4. Modificar cliente            |" <<endl;
+    cout<<"| 5. Eliminar cliente             |" <<endl;
+    cout<<"| 6. Salir                        |" <<endl;
+    cout<<"|---------------------------------|"<<endl; 
     
     do{
  cin>>var;
@@ -39,23 +40,23 @@ main (){
     
     switch(opc){
      case 1:{
-         uno();
+        guardarCliente();
          break;
         }   
         case 2:{
-      dos();
+        mostrarCliente();
          break;
         }
         case 3:{
-      tres();
+        buscarCliente();
          break;
         }
         case 4:{
-           cuatro();
+        modificarCliente();
          break;
         }
         case 5:{
-          cinco();
+          eliminarCliente();
          break;
         } 
         case 6:{
@@ -70,13 +71,13 @@ main (){
     }while(opc!=6);   
 }
 //------------------GUARDAR-----------------
-void uno(){
+void guardarCliente(){
 	ofstream archivo;
 	system("cls");
 	archivo.open("Clientes.txt",ios::app);
 	int codigo;
 	string cliente, telefono, direccion;
-	cout<<"Ingrese codigo: "<<endl;
+	cout<<"Ingrese codigo para el cliente: "<<endl;
 	cin>>codigo;
 	cin.ignore();
 	cout<<"Ingrese el nombre y el apellido del cliente en minusculas: "<<endl;
@@ -85,12 +86,12 @@ void uno(){
 	getline(cin,telefono);
 	cout<<"Ingrese la direccion de vivienda del cliente: "<<endl;
 	getline(cin,direccion);
-	archivo<<codigo<<", "<<cliente<<", "<<telefono<<", "<<direccion<<endl;
+	archivo<<codigo<<","<<cliente<<","<<telefono<<","<<direccion<<",1"<<endl;
     archivo.close();
 	system("pause");
 }
 //--------------MOSTRAR TODOS------------
-void dos(){
+void mostrarCliente(){
 	int codigo;
 	char cliente[30],telefono[20],direccion[30];
 	ifstream Leer;
@@ -132,7 +133,7 @@ void dos(){
 }
 
 //--------------BUSCAR------------
-void tres(){
+void buscarCliente(){
 	int codigo,cod;
 	char cliente[30],telefono[20],direccion[30];
 	ifstream Leer;
@@ -140,7 +141,7 @@ void tres(){
 	bool bandera=false;
 	system("cls");
 	Leer.open("Clientes.txt");
-	cout<<"Ingrese el codigo a buscar"<<endl;
+	cout<<"Ingrese el codigo del cliente a buscar"<<endl;
 	cin>>cod;
 	char linea[120];
 	Leer.getline(linea,sizeof(linea));
@@ -184,12 +185,12 @@ void tres(){
 }
 
 //--------------MODIFICAR----------------
-void cuatro(){
+void modificarCliente(){
 	int codigo,cod;
 	char cliente[30],telefono[20],direccion[30];
 	
-	
 	string clientenu, telefononu, direccionnu;
+	
 	bool bandera=false;
 	ifstream Leer;
 	ofstream Temp;
@@ -200,15 +201,9 @@ void cuatro(){
 	cout<<"Ingrese el codigo del cliente del que se va a modificar la informacion: "<<endl;
 	cin>>cod;
 	cin.ignore();
-	cout<<"Ingrese el nombre y apellido del cliente en minusculas: "<<endl;
-	getline(cin,clientenu);
-	cout<<"Ingrese el numero de telefono: "<<endl;
-	getline(cin,telefononu);
-	cout<<"Ingrese la direccion de vivienda del cliente: "<<endl;
-	getline(cin,direccionnu);
+	
 	char linea[120];
 	Leer.getline(linea,sizeof(linea));
-	
 	while(!Leer.eof()){
 		for(int i=0;i<4;i++){
 			char *puntero;
@@ -226,8 +221,10 @@ void cuatro(){
 				strcpy(direccion,puntero);
 			}
 		}
+	
 	if(cod==codigo){
 		bandera=true;	
+		
 	cout<<"--------------------------------"<<endl;
 	cout<<"Codigo: "<<codigo<<endl;
 	cout<<"Nombre del cliente: "<<cliente<<endl;
@@ -236,6 +233,13 @@ void cuatro(){
 	cout<<"--------------------------------"<<endl;
 	cout<<endl;	
 	
+	cout<<"Ingrese el nombre y apellido del cliente en minusculas: "<<endl;
+	getline(cin,clientenu);
+	cout<<"Ingrese el numero de telefono: "<<endl;
+	getline(cin,telefononu);
+	cout<<"Ingrese la direccion de vivienda del cliente: "<<endl;
+	getline(cin,direccionnu);
+
 	cout<<"\n";
 
 	cout<<"--------------------------------"<<endl;
@@ -245,6 +249,7 @@ void cuatro(){
 	cout<<"Direccion de vivienda: "<<direccionnu<<endl;
 	cout<<"--------------------------------"<<endl;
 	cout<<endl;	
+	
 	Leer.getline(linea,sizeof(linea));
 	Temp<<codigo<<","<<clientenu<<","<<telefononu<<","<<direccionnu<<endl;
 	}
@@ -265,7 +270,7 @@ void cuatro(){
 }
 
 //--------------ELIMINAR-----------------
-void cinco(){
+void eliminarCliente(){
 	int codigo,cod;
 	char cliente[30],telefono[10],direccion[10];
 	bool bandera=false;
@@ -317,9 +322,43 @@ void cinco(){
 		if(bandera==false){
 			cout<<"El registro no existe"<<endl;
 		}
-	Leer.close();
+		
+		else{
+			int confirmacion;
+			cout<<"Esta seguro que desea eliminar el registro?"<<endl;
+	cout<<"1 para confirmar"<<endl;
+	cout<<"2 para cancelar\n";
+	cin>>confirmacion;
+				
+			switch(confirmacion){
+							case 2:{
+				Leer.close();
+	Temp.close();
+    remove("Temp.txt");
+	cout<<"El registro NO fue eliminado\n";
+	
+				break;
+			}
+			case 1:{
+				Leer.close();
 	Temp.close();
     remove("Clientes.txt");
 	rename("Temp.txt","Clientes.txt");
-	system("pause");
+	cout<<"Registro eliminado con exito\n";
+
+					break;
+			}
+			default:{
+						cout<<"Opcion no encontrada"<<endl;
+						cout<<"El registro NO fue eliminado\n";
+
+				break;
+			}
+			}
+
+		}
+		
+			system("pause");
+
+
 }

@@ -7,14 +7,6 @@
  
 using namespace std;
 
-void gotoxy(int x,int y){  
-      HANDLE hcon;  
-      hcon = GetStdHandle(STD_OUTPUT_HANDLE);  
-      COORD dwPos;  
-      dwPos.X = x;  
-      dwPos.Y= y;  
-      SetConsoleCursorPosition(hcon,dwPos);  
- }
  
  void guardar(),mostrar(),buscar(),modificar(),eliminar(),ver();
 
@@ -59,8 +51,7 @@ switch(opc){
          exit(0);   
         }       
         default :{
-            cout<<"\n \t\t\tOpcion invalida!!!";
-            cout<<"\n \t\t\tIngrese una opcion correcta"<<endl;
+            cout<<"\n \t\t\tOpcion no encontrada"<<endl;
             system("pause");
             
             break;
@@ -165,7 +156,7 @@ void mostrar(){
 	Leer.getline(linea,sizeof(linea));
 	contador++;
 	}
-		cout<<"El total de empleados registrados son:"<<contador<<endl;
+		cout<<"El total de empleados registrados es:"<<contador<<endl;
 	Leer.close();
 	system("pause");
 }
